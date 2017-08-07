@@ -1,12 +1,12 @@
 # **Finding Lane Lines on the Road**
 ---
 
-###Overview
+### Overview
 
 This project is about identifying lane lines in images using Python and OpenCV.
 
 
-###Requirements
+### Requirements
 
 - Jupyter notebook: lane_detection.ipynb
 - Project writeup: writeup.md
