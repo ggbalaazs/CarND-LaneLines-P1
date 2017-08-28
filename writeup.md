@@ -23,6 +23,7 @@ The pipeline is basically the following:
 #### Thresholding
 
 Fixed-level thresholding is used to zero all pixels below `170`. Defining optimal value for all three videos is not trivial. So additionally adaptive thresholding is used to produce a binary mask (kernel size is `21` pixels). The target here is to improve thresholding on *challenge.mp4*, which requires different values on different image locations. This mask is then applied on fixed-level thresholded image to zero some further pixels.  
+
 In the images below we can see 1. the original , 2. fixed-level thresholded image, 3. adaptive thresholded binary mask, 4. final masked thresholded grayscale image.
 
 ![alt text][img1]
@@ -54,9 +55,9 @@ Image sample demonstrating ROI cutout.
 
 #### Line detection
 
-As first step lines with reasonable slopes are sorted to left/right lines according to their signum. Then there is outlier filtering and averaging, all based on lines from previous frames (hold in static containers per side).
+As first step lines with reasonable slopes are sorted to left/right lines according to their signum. Then there is outlier filtering and averaging, all based on lines from previous frames (hold in static containers per side). FInally the result is merged onto the original image.
 
-![alt text][gif1]
+![alt text][gif1]  
 Hough lines drawn on edge detection image.
 
 ###### Slope
